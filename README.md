@@ -2,6 +2,10 @@
 
 Qrepo is a lightweight and intuitive package and build manager designed to streamline the process of managing project dependencies and scripts. Whether you're working on a small script or a complex software project, Qrepo provides a simple yet powerful set of commands to enhance your development workflow.
 
+<p align="center">
+    <img src="./assets/screenshot.png" />
+</p>
+
 ## Installation
 
 ### Linux and macOS
