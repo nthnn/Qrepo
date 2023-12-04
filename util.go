@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"os/exec"
@@ -31,6 +32,15 @@ func writeStringToFile(filename, content string) error {
 	}
 
 	return nil
+}
+
+func readCurrentQrepo() ([]byte, error) {
+	dat, err := os.ReadFile("qrepo.json")
+	if err != nil {
+		return nil, err
+	}
+
+	return dat, nil
 }
 
 func hasQrepoJsonAlready() bool {
@@ -81,4 +91,29 @@ func getGitRemoteOrigin() (string, error) {
 
 	remoteURL := strings.TrimSpace(string(output))
 	return remoteURL, nil
+}
+
+func extractQrepoInfos() (Qrepo, error) {
+	var repo Qrepo
+	repoBytes, err := readCurrentQrepo()
+
+	if err != nil {
+		return repo, err
+	}
+
+	if err := json.Unmarshal(repoBytes, &repo); err != nil {
+		return repo, err
+	}
+
+	return repo, nil
+}
+
+func getMapKeys(inputMap map[string]string) []string {
+	keys := make([]string, 0, len(inputMap))
+
+	for key := range inputMap {
+		keys = append(keys, key)
+	}
+
+	return keys
 }
