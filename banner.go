@@ -36,13 +36,14 @@ func printCommandHelp() {
 	fmt.Println("\nCommands:")
 	fmt.Println("\tinit\tInitialize current dir as repository project.")
 	fmt.Println("\trun\tRun defined script in the project folder.")
+	fmt.Println("\tlog\tLogs the informations on the current repository.")
 	fmt.Println("\thelp\tShow help message for specific command.")
 
 	fmt.Println()
 }
 
 func printInitHelp() {
-	fmt.Println("Usage")
+	fmt.Println("Usage:")
 	fmt.Println("\tqrepo init")
 
 	fmt.Println("\nDescription:")
@@ -54,7 +55,7 @@ func printInitHelp() {
 }
 
 func printRunHelp() {
-	fmt.Println("Usage")
+	fmt.Println("Usage:")
 	fmt.Println("\tqrepo run <script name>")
 
 	fmt.Println("\nParameter:")
@@ -63,4 +64,14 @@ func printRunHelp() {
 	fmt.Println("\nDescription:")
 	fmt.Println("\tRuns a script defined in the `qrepo.json` file.")
 	fmt.Println()
+}
+
+func printLogHelp() {
+	fmt.Println("Usage:")
+	fmt.Println("\tqrepo log")
+
+	fmt.Println("\nDescription:")
+	fmt.Println("\tLogs the informations of the current Qrepo;")
+	fmt.Println("\tincluding the name of the project, author,")
+	fmt.Println("\tgit origin, and the available scripts.")
 }
