@@ -74,4 +74,5 @@ func printLogHelp() {
 	fmt.Println("\tLogs the informations of the current Qrepo;")
 	fmt.Println("\tincluding the name of the project, author,")
 	fmt.Println("\tgit origin, and the available scripts.")
+	fmt.Println()
 }
