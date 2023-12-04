@@ -7,15 +7,15 @@ import (
 )
 
 func main() {
-	printQrepoBanner()
-
 	if len(os.Args) < 2 {
+		printQrepoBanner()
 		printCommandHelp()
 		return
 	}
 
 	switch os.Args[1] {
 	case "init":
+		printQrepoBanner()
 		if len(os.Args) != 2 {
 			printInitHelp()
 			return
@@ -31,6 +31,15 @@ func main() {
 
 		runScript(os.Args[2])
 
+	case "log":
+		printQrepoBanner()
+		if len(os.Args) != 2 {
+			printLogHelp()
+			return
+		}
+
+		logRepo()
+
 	case "help":
 		printCommandHelp()
 	}
@@ -38,7 +47,7 @@ func main() {
 
 func initRepo() {
 	if hasQrepoJsonAlready() {
-		fmt.Println("Already initialized a Qrepo project.")
+		fmt.Println("Already \033[31minitialized\033[0m Qrepo project.")
 		return
 	}
 
@@ -95,5 +104,34 @@ func initRepo() {
 }
 
 func runScript(scriptName string) {
+	if !hasQrepoJsonAlready() {
+		fmt.Println("\033[31mNot\033[0m a Qrepo repository project.")
+		return
+	}
 
+	qrepo, err := extractQrepoInfos()
+	if err != nil {
+		fmt.Println("Error: " + err.Error())
+		return
+	}
+
+	runCommand(qrepo.Scripts[scriptName])
+}
+
+func logRepo() {
+	if !hasQrepoJsonAlready() {
+		fmt.Println("\033[31mNot\033[0m a Qrepo repository project.")
+		return
+	}
+
+	qrepo, err := extractQrepoInfos()
+	if err != nil {
+		fmt.Println("Error: " + err.Error())
+		return
+	}
+
+	fmt.Println("\033[35mName\033[0m:\t\t" + qrepo.Name)
+	fmt.Println("\033[35mAuthor\033[0m:\t\t" + qrepo.Author)
+	fmt.Println("\033[35mGit\033[0m:\t\t" + qrepo.Git)
+	fmt.Println("\033[35mScripts\033[0m:\t" + strings.Join(getMapKeys(qrepo.Scripts), ", "))
 }
