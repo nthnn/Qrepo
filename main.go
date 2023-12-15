@@ -92,7 +92,7 @@ func initRepo() {
 	generated := "{\n\t\"name\": \"" + projectName + "\"," +
 		"\n\t\"author\": \"" + projectAuthor + "\"," +
 		"\n\t\"git\": \"" + gitOrigin + "\"," +
-		"\n\t\"scripts\": {\n\t\t\"test\": \"echo No test specified.\"\n\t}" +
+		"\n\t\"scripts\": {\n\t\t\"test\": [\"echo No test specified.\"]\n\t}" +
 		"\n}"
 
 	if err := writeStringToFile("qrepo.json", generated); err != nil {
