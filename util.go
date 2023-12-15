@@ -48,7 +48,7 @@ func hasQrepoJsonAlready() bool {
 	return !os.IsNotExist(err)
 }
 
-func runCommand(command string) error {
+func runCommandShell(command string) error {
 	var cmd *exec.Cmd
 
 	switch runtime.GOOS {
@@ -64,6 +64,16 @@ func runCommand(command string) error {
 	err := cmd.Run()
 	if err != nil {
 		return fmt.Errorf("failed to run command: %v", err)
+	}
+
+	return nil
+}
+
+func runCommand(commands []string) error {
+	for i := 0; i < len(commands); i++ {
+		if err := runCommandShell(commands[i]); err != nil {
+			return err
+		}
 	}
 
 	return nil
@@ -108,7 +118,7 @@ func extractQrepoInfos() (Qrepo, error) {
 	return repo, nil
 }
 
-func getMapKeys(inputMap map[string]string) []string {
+func getMapKeys(inputMap map[string][]string) []string {
 	keys := make([]string, 0, len(inputMap))
 
 	for key := range inputMap {
