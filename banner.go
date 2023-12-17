@@ -25,7 +25,7 @@ const QrepoBanner = "\n \033[32m██████\033[0m\033[33m╗\033[0m \033
 
 func printQrepoBanner() {
 	fmt.Println(QrepoBanner)
-	fmt.Println("\n\033[97m\033[44m       Qrepo Package Manager v1.0.0       \033[0m\033[0m")
+	fmt.Println("\n\033[97m\033[44m       Qrepo Package Manager v1.1.0       \033[0m\033[0m")
 	fmt.Println()
 }
 
