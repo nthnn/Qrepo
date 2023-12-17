@@ -70,13 +70,7 @@ func runCommandShell(command string) error {
 }
 
 func runCommand(commands []string) error {
-	for i := 0; i < len(commands); i++ {
-		if err := runCommandShell(commands[i]); err != nil {
-			return err
-		}
-	}
-
-	return nil
+	return runCommandShell(strings.Join(commands, " && "))
 }
 
 func getCurrentUsername() (string, error) {
