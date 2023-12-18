@@ -13,7 +13,7 @@ echo "[\033[92m+\033[0m] Cloning source files from GitHub..."
 git clone --quiet --depth 1 https://github.com/nthnn/Qrepo.git && cd Qrepo
 chmod -R 777 build.sh && ./build.sh
 
-if[ -e "/usr/local/bin/qrepo" ]; then
+if [ -e "/usr/local/bin/qrepo" ]; then
     echo "[\033[91m-\033[0m] Removing previously installed Qrepo..."
     rm -rf /usr/local/bin/qrepo
 fi
@@ -21,4 +21,4 @@ fi
 echo "[\033[92m+\033[0m] Installing Qrepo to default bin path..."
 mv dist/qrepo /usr/local/bin/qrepo && rm -rf ../Qrepo
 
-echo "[\033[92m+\033[0m] Successfully \033[36installed\033[0m!"
+echo "[\033[92m+\033[0m] Successfully \033[36minstalled\033[0m!"
