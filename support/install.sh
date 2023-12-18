@@ -8,4 +8,7 @@ fi
 
 git clone --quiet --depth 1 https://github.com/nthnn/Qrepo.git && cd Qrepo
 chmod -R 777 build.sh && ./build.sh
-rm -i /usr/local/bin/qrepo && mv dist/qrepo /usr/local/bin/qrepo && rm -rf ../Qrepo
+
+if[ -e "/usr/local/bin/qrepo" ]; then 
+    rm -rf /usr/local/bin/qrepo
+mv dist/qrepo /usr/local/bin/qrepo && rm -rf ../Qrepo
