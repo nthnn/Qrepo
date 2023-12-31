@@ -40,7 +40,8 @@ func main() {
 
 		logRepo()
 
-	case "help":
+	default:
+		printQrepoBanner()
 		printCommandHelp()
 	}
 }
