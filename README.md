@@ -59,6 +59,14 @@ For Windows, download the executable file from [here](https://github.com/nthnn/Q
     qrepo help
     ```
 
+## Used By
+
+Below is the list of projects using the Qrepo as package manager and build command line tool.
+
+1. [QLBase](https://github.com/nthnn/QLBase) - Decentralizable, scalable, and reliable backend solution alternative to traditional NoSQL, SaaS, and cloud-based services.
+2. [Rheolaeth](https://github.com/nthnn/rheolaeth) - Rheolaeth is a remote tool for controlling shell via HTTP connection using another device in network.
+3. [Zync OS](https://github.com/nthnn/Zync-OS) - Mock-up bootloader and kernel-only operating system with a very basic boring shell written in pure Assembly.
+
 ## Contributing and Contributors
 
 All contributions are welcome to make Qrepo even better. Whether you want to report a bug, suggest new features, or contribute code, your contributions are highly appreciated.
