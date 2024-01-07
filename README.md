@@ -59,6 +59,36 @@ For Windows, download the executable file from [here](https://github.com/nthnn/Q
     qrepo help
     ```
 
+## Usage
+
+Upon initialization of Qrepo project, it will generate something like this below:
+
+```json
+    ...
+	"scripts": {
+		"test": ["echo No test specified."]
+	}
+    ...
+```
+
+Whence you can run it with `qrepo run test` and it will execute the `echo No test specified` to your shell.
+
+To make a script command for different operating systems and architectures, you can do something like:
+
+```json
+    ...
+	"scripts": {
+		"darwin/amd64:greet":     ["echo Hello from Darwin (AMD64)."],
+		"darwin/arm64:greet":     ["echo Hello from Darwin (ARM64)."],
+        "linux/386:greet":        ["echo Hello from Linux (i386)"],
+        "linux/amd64:greet":      ["echo Hello from Linux (AMD64)"],
+		"windows:greet":          ["echo Hello from Windows."],
+	}
+    ...
+```
+
+For instance, you run `qrepo run greet` on Linux with i386, it will print the `Hello from Linux (i386)`. While if you run the command on a Windows with whatever processor, you'll get `Hello from Windows`.
+
 ## Used By
 
 Below is the list of projects using the Qrepo as package manager and build command line tool.
