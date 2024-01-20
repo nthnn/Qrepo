@@ -97,6 +97,17 @@ func runScript(scriptName string) {
 	runCommand(qrepo.Scripts[key])
 }
 
+func executeOnlineScript() {
+	if len(os.Args) != 3 {
+		fmt.Println("A script URL \033[31mwas not\033[0m specified.")
+		return
+	}
+
+	if err := runOnlineScript(os.Args[2]); err != nil {
+		fmt.Println("\033[31mError: \033[0m" + err.Error())
+	}
+}
+
 func logRepo() {
 	if !hasQrepoJsonAlready() {
 		fmt.Println("\033[31mNot\033[0m a Qrepo repository project.")
