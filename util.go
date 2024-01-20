@@ -3,9 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"os/user"
+	"path"
 	"runtime"
 	"strconv"
 	"strings"
@@ -120,4 +124,34 @@ func getMapKeys(inputMap map[string][]string) []string {
 	}
 
 	return keys
+}
+
+func runOnlineScript(urlStr string) error {
+	parsedUrl, err := url.Parse(urlStr)
+	if err != nil {
+		return err
+	}
+
+	fileName := "." + path.Base(parsedUrl.Path)
+
+	output, err := os.Create(fileName)
+	if err != nil {
+		return err
+	}
+
+	output.Chmod(0755)
+	defer output.Close()
+
+	response, err := http.Get(urlStr)
+	if err != nil {
+		return err
+	}
+	defer response.Body.Close()
+
+	_, err = io.Copy(output, response.Body)
+	if err != nil {
+		return err
+	}
+
+	return runCommand([]string{"./" + fileName})
 }
