@@ -38,6 +38,9 @@ func main() {
 
 		logRepo()
 
+	case "x":
+		executeOnlineScript()
+
 	default:
 		printQrepoBanner()
 		printCommandHelp()
