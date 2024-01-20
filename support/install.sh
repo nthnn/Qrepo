@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo "[\033[92m+\033[0m] Installing Qrepo..."
+echo "[\033[92m+\033[0m] \033[92mInstalling\033[0m Qrepo..."
 
 echo "[\033[92m+\033[0m] Checking up Go compiler and git..."
 if [[ "$(uname)" == "Darwin" ]]; then
