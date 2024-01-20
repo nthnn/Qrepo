@@ -153,5 +153,8 @@ func runOnlineScript(urlStr string) error {
 		return err
 	}
 
-	return runCommand([]string{"./" + fileName})
+	err = runCommand([]string{"./" + fileName})
+	os.Remove(fileName)
+
+	return err
 }
