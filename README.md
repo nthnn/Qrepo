@@ -53,7 +53,13 @@ For Windows, download the executable file from [here](https://github.com/nthnn/Q
     qrepo log
     ```
 
-4. `help`: Show help message for a specific command.
+4. `x`: Executes a script from specified URL.
+    Example:
+    ```bash
+    qrepo x https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh
+    ```
+
+5. `help`: Show help message for a specific command.
     Example:
     ```bash
     qrepo help
