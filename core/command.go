@@ -77,6 +77,7 @@ func InitRepo() {
 
 	generated := "{\n\t\"name\": \"" + projectName + "\"," +
 		"\n\t\"author\": \"" + projectAuthor + "\"," +
+		"\n\t\"version\": \"" + projectVersion + "\"," +
 		"\n\t\"description\": \"" + projectDesc + "\"," +
 		"\n\t\"git\": \"" + gitOrigin + "\"," +
 		"\n\t\"scripts\": {\n\t\t\"test\": [\"echo No test specified.\"]\n\t}" +
