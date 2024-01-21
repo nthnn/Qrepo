@@ -44,6 +44,9 @@ func main() {
 	case "x":
 		core.ExecuteOnlineScript()
 
+	case "update":
+		core.UpdateQrepo()
+
 	default:
 		banner.PrintQrepoBanner()
 		banner.PrintCommandHelp()
