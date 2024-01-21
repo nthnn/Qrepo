@@ -11,6 +11,7 @@ func PrintCommandHelp() {
 	fmt.Println("\trun\tRun defined script in the project folder.")
 	fmt.Println("\tlog\tLogs the informations on the current repository.")
 	fmt.Println("\tx\tExecute a script from specified URL.")
+	fmt.Println("\tupdate\tUpdates the current installed Qrepo.")
 	fmt.Println("\thelp\tShow help message for specific command.")
 
 	fmt.Println()
