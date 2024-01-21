@@ -1,5 +1,7 @@
 # Qrepo Package Manager
 
+<img src="assets/qrepo-logo.png" width="300px" align="left"/>
+
 ![Build Action](https://github.com/nthnn/Qrepo/actions/workflows/build.yml/badge.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/nthnn/Qrepo.svg)](https://github.com/nthnn/Qrepo/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/nthnn/Qrepo.svg)](https://github.com/nthnn/Qrepo/stargazers)
@@ -165,6 +167,11 @@ If you're eager to get involved and contribute your coding expertise to Qrepo, t
 6. Create a pull request (PR) from your branch to the main branch of the Qrepo repository.
 7. Your PR will be reviewed, and any necessary changes will be discussed and implemented.
 8. Once your PR is approved, it will be merged into the main branch, and your contribution will be part of Qrepo.
+
+## Contributors
+
+- [Nathanne Isip](https://github.com/nthnn) - Author, Developer
+- [Lady Selene](https://www.instagram.com/lady.selenee/) - Logo Creator, Illustrator
 
 ## License
 
