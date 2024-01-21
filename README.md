@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nthnn/Qrepo/blob/main/LICENSE)
 <a href="https://www.buymeacoffee.com/nthnn"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="20px"></a>
 
+Simple and easy-to-use all-for-one build tool for AIX, Android, Darwin, Dragonfly, FreeBSD, illumos, iOS, Linux, NetBSD, OpenBSD, Plan9, Solaris, and Windows.
+
 Qrepo is a lightweight and intuitive package and build manager designed to streamline the process of managing project dependencies and scripts. Whether you're working on a small script or a complex software project, Qrepo provides a simple yet powerful set of commands to enhance your development workflow.
 
 <p align="center">
@@ -14,9 +16,7 @@ Qrepo is a lightweight and intuitive package and build manager designed to strea
 
 ## Installation
 
-### Linux and macOS
-
-Copy the following command on your terminal to smoothly install Qrepo to your system:
+For (Linux, macOS, and/or UNIX-based) systems with built-in curl and Bash shell, copy the following command on your terminal to smoothly install Qrepo to your system:
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh)"
@@ -28,9 +28,7 @@ To update the current installed Qrepo, you can use the following on your termina
 qrepo x https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh
 ```
 
-### Windows
-
-For Windows, download the executable file from [here](https://github.com/nthnn/Qrepo/releases).
+Otherwise, download the binary form from [here](https://github.com/nthnn/Qrepo/releases) if you don't want to build Qrepo yourself.
 
 ## Getting Started
 
@@ -101,6 +99,17 @@ To make a script command for different operating systems and architectures, you 
 
 For instance, you run `qrepo run greet` on Linux with i386, it will print the `Hello from Linux (i386)`. While if you run the command on a Windows with whatever processor, you'll get `Hello from Windows`.
 
+## GitHub Actions
+
+If your project uses Qrepo for building and/or for other purposes, you can just add the Qrepo installation as a step:
+
+```yaml
+    ...
+      - name: Install Qrepo
+        run: sh -c "$(curl -fsSL https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh)"
+    ...
+```
+
 ## Used By
 
 Below is the list of projects using the Qrepo as package manager and build command line tool.
@@ -150,11 +159,6 @@ If you're eager to get involved and contribute your coding expertise to Qrepo, t
 6. Create a pull request (PR) from your branch to the main branch of the Qrepo repository.
 7. Your PR will be reviewed, and any necessary changes will be discussed and implemented.
 8. Once your PR is approved, it will be merged into the main branch, and your contribution will be part of Qrepo.
-
-### Contributors
-
-- [Nathanne Isip](https://github.com/nthnn) — Original Author, Developer
-- [Bryan Carpizo](https://github.com/Hirazoem) — He built Qrepo for Windows
 
 ## License
 
