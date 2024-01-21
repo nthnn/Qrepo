@@ -41,6 +41,9 @@ func InitRepo() {
 		projectAuthor = tmpAuthor
 	}
 
+	fmt.Print("Description: ")
+	projectDesc := util.ReadString()
+
 	gitOrigin, err := util.GetGitRemoteOrigin()
 	if err != nil || gitOrigin == "" {
 		gitOrigin = "null"
@@ -55,6 +58,7 @@ func InitRepo() {
 
 	generated := "{\n\t\"name\": \"" + projectName + "\"," +
 		"\n\t\"author\": \"" + projectAuthor + "\"," +
+		"\n\t\"description\": \"" + projectDesc + "\"," +
 		"\n\t\"git\": \"" + gitOrigin + "\"," +
 		"\n\t\"scripts\": {\n\t\t\"test\": [\"echo No test specified.\"]\n\t}" +
 		"\n}"
@@ -124,6 +128,7 @@ func LogRepo() {
 
 	fmt.Println("\033[35mName\033[0m:\t\t" + qrepo.Name)
 	fmt.Println("\033[35mAuthor\033[0m:\t\t" + qrepo.Author)
+	fmt.Println("\033[35mDescription\033[0m:\t\t" + qrepo.Description)
 	fmt.Println("\033[35mGit\033[0m:\t\t" + qrepo.Git)
 	fmt.Println("\033[35mScripts\033[0m:\t" + strings.Join(qrepo.getMapKeys(), ", "))
 }
