@@ -2,11 +2,13 @@ package core
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"runtime"
 	"strings"
 
 	"github.com/nthnn/Qrepo/util"
+	"golang.org/x/mod/semver"
 )
 
 func InitRepo() {
@@ -41,6 +43,18 @@ func InitRepo() {
 		projectAuthor = tmpAuthor
 	}
 
+	fmt.Print("Version (v0.0.1): ")
+	projectVersion := util.ReadString()
+
+	if projectVersion == "" {
+		projectVersion = "v0.0.1"
+	}
+
+	if !semver.IsValid(projectVersion) {
+		fmt.Println("\033[31mError\033[0m: Invalid sematic versioning string.")
+		return
+	}
+
 	fmt.Print("Description: ")
 	projectDesc := util.ReadString()
 
@@ -56,6 +70,11 @@ func InitRepo() {
 		gitOrigin = tmpOrigin
 	}
 
+	if _, err := url.ParseRequestURI(gitOrigin); err != nil {
+		fmt.Println("\033[31mError\033[0m: Invalid Git origin URL.")
+		return
+	}
+
 	generated := "{\n\t\"name\": \"" + projectName + "\"," +
 		"\n\t\"author\": \"" + projectAuthor + "\"," +
 		"\n\t\"description\": \"" + projectDesc + "\"," +
@@ -64,7 +83,7 @@ func InitRepo() {
 		"\n}"
 
 	if err := util.WriteStringToFile("qrepo.json", generated); err != nil {
-		fmt.Println("Error occured: " + err.Error())
+		fmt.Println("\033[31mError\033[0m: " + err.Error())
 		return
 	}
 
@@ -137,6 +156,7 @@ func LogRepo() {
 
 	fmt.Println("\033[35mName\033[0m:\t\t" + qrepo.Name)
 	fmt.Println("\033[35mAuthor\033[0m:\t\t" + qrepo.Author)
+	fmt.Println("\033[35mVersion\033[0m:\t\t" + qrepo.Version)
 	fmt.Println("\033[35mDescription\033[0m:\t" + qrepo.Description)
 	fmt.Println("\033[35mGit\033[0m:\t\t" + qrepo.Git)
 	fmt.Println("\033[35mScripts\033[0m:\t" + strings.Join(qrepo.getMapKeys(), ", "))

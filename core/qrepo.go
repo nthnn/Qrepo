@@ -8,6 +8,7 @@ import (
 type Qrepo struct {
 	Name        string              `json:"name"`
 	Author      string              `json:"author"`
+	Version     string              `json:"version"`
 	Description string              `json:"description"`
 	Git         string              `json:"git"`
 	Scripts     map[string][]string `json:"scripts"`
