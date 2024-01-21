@@ -122,13 +122,13 @@ func LogRepo() {
 
 	qrepo, err := extractQrepoInfos()
 	if err != nil {
-		fmt.Println("Error: " + err.Error())
+		fmt.Println("\033[31mError\033[0m: " + err.Error())
 		return
 	}
 
 	fmt.Println("\033[35mName\033[0m:\t\t" + qrepo.Name)
 	fmt.Println("\033[35mAuthor\033[0m:\t\t" + qrepo.Author)
-	fmt.Println("\033[35mDescription\033[0m:\t\t" + qrepo.Description)
+	fmt.Println("\033[35mDescription\033[0m:\t" + qrepo.Description)
 	fmt.Println("\033[35mGit\033[0m:\t\t" + qrepo.Git)
 	fmt.Println("\033[35mScripts\033[0m:\t" + strings.Join(qrepo.getMapKeys(), ", "))
 }

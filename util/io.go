@@ -1,15 +1,21 @@
 package util
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
 
 func ReadString() string {
-	ln := ""
-	fmt.Scanf("%s", &ln)
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
 
-	return ln
+	if err := scanner.Err(); err != nil {
+		fmt.Println("\033[31mError\033[0m: " + err.Error())
+		os.Exit(0)
+	}
+
+	return scanner.Text()
 }
 
 func WriteStringToFile(filename, content string) error {
