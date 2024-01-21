@@ -114,6 +114,15 @@ func ExecuteOnlineScript() {
 	}
 }
 
+func UpdateQrepo() {
+	if err := util.RunOnlineScript("https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh"); err != nil {
+		fmt.Println("\033[31mError: \033[0m" + err.Error())
+		os.Exit(0)
+	}
+
+	fmt.Println("[\033[92m+\033[0m] Done updating \033[36mQrepo\033[0m!")
+}
+
 func LogRepo() {
 	if !hasQrepoJsonAlready() {
 		fmt.Println("\033[31mNot\033[0m a Qrepo repository project.")
