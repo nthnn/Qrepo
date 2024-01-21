@@ -39,31 +39,31 @@ Otherwise, download the binary form from [here](https://github.com/nthnn/Qrepo/r
 
 ## Command
 
-1. `init`: Initialize the current directory as a Qrepo repository project.
+- `init`: Initialize the current directory as a Qrepo repository project.
     Example:
     ```bash
     qrepo init
     ```
 
-2. `run`: Run a defined script in the project folder.
+- `run`: Run a defined script in the project folder.
     Example:
     ```bash
     qrepo run build
     ```
 
-3. `log`: Display detailed information on the current repository.
+- `log`: Display detailed information on the current repository.
     Example:
     ```bash
     qrepo log
     ```
 
-4. `x`: Executes a script from specified URL.
+- `x`: Executes a script from specified URL.
     Example:
     ```bash
     qrepo x https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh
     ```
 
-5. `help`: Show help message for a specific command.
+- `help`: Show help message for a specific command.
     Example:
     ```bash
     qrepo help
@@ -101,14 +101,20 @@ For instance, you run `qrepo run greet` on Linux with i386, it will print the `H
 
 ## GitHub Actions
 
-If your project uses Qrepo for building and/or for other purposes, you can just add the Qrepo installation as a step:
+If your project utilizes Qrepo for building or other functions, simply include the Qrepo installation by adding the following step to your GitHub CI/CD workflow pipeline:
 
 ```yaml
     ...
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '1.21.2'
+
       - name: Install Qrepo
         run: sh -c "$(curl -fsSL https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh)"
     ...
 ```
+
+Utilizing the official Golang GitHub action is essential to bypass the need for brew or apt installations. Also, please note that this step is specifically designed for GitHub CI/CD workflow pipelines and is applicable only to Ubuntu and macOS builds.
 
 ## Used By
 
