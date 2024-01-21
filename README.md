@@ -22,6 +22,12 @@ Copy the following command on your terminal to smoothly install Qrepo to your sy
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh)"
 ```
 
+To update the current installed Qrepo, you can use the following on your terminal:
+
+```bash
+qrepo x https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh
+```
+
 ### Windows
 
 For Windows, download the executable file from [here](https://github.com/nthnn/Qrepo/releases).
