@@ -2,47 +2,50 @@ package main
 
 import (
 	"os"
+
+	"github.com/nthnn/Qrepo/banner"
+	"github.com/nthnn/Qrepo/core"
 )
 
 func main() {
 	if len(os.Args) < 2 {
-		printQrepoBanner()
-		printCommandHelp()
+		banner.PrintQrepoBanner()
+		banner.PrintCommandHelp()
 		return
 	}
 
 	switch os.Args[1] {
 	case "init":
-		printQrepoBanner()
+		banner.PrintQrepoBanner()
 		if len(os.Args) != 2 {
-			printInitHelp()
+			banner.PrintInitHelp()
 			return
 		}
 
-		initRepo()
+		core.InitRepo()
 
 	case "run":
 		if len(os.Args) != 3 {
-			printRunHelp()
+			banner.PrintRunHelp()
 			return
 		}
 
-		runScript(os.Args[2])
+		core.RunScript(os.Args[2])
 
 	case "log":
-		printQrepoBanner()
+		banner.PrintQrepoBanner()
 		if len(os.Args) != 2 {
-			printLogHelp()
+			banner.PrintLogHelp()
 			return
 		}
 
-		logRepo()
+		core.LogRepo()
 
 	case "x":
-		executeOnlineScript()
+		core.ExecuteOnlineScript()
 
 	default:
-		printQrepoBanner()
-		printCommandHelp()
+		banner.PrintQrepoBanner()
+		banner.PrintCommandHelp()
 	}
 }
