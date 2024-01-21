@@ -27,6 +27,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/nthnn/Qrepo/master/support
 To update the current installed Qrepo, you can use the following on your terminal:
 
 ```bash
+qrepo update
+# Or
 qrepo x https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh
 ```
 
@@ -63,6 +65,12 @@ Otherwise, download the binary form from [here](https://github.com/nthnn/Qrepo/r
     Example:
     ```bash
     qrepo x https://raw.githubusercontent.com/nthnn/Qrepo/master/support/install.sh
+    ```
+
+- `update`: Installs an updated Qrepo.
+    Example:
+    ```bash
+    qrepo update
     ```
 
 - `help`: Show help message for a specific command.
