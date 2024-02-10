@@ -30,9 +30,10 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 2 {
+	if len(os.Args) == 1 {
 		banner.PrintQrepoBanner()
 		banner.PrintCommandHelp()
+
 		return
 	}
 
@@ -47,11 +48,6 @@ func main() {
 		core.InitRepo()
 
 	case "run":
-		if len(os.Args) != 3 {
-			banner.PrintRunHelp()
-			return
-		}
-
 		core.RunScript(os.Args[2])
 
 	case "log":
