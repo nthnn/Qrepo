@@ -31,11 +31,21 @@ import (
 	"os/exec"
 	"path"
 	"runtime"
+	"strconv"
 	"strings"
 )
 
 func runCommandShell(command string) error {
 	var cmd *exec.Cmd
+
+	if len(os.Args) > 3 {
+		j := 1
+		for i := 3; i < len(os.Args); i++ {
+			command = strings.ReplaceAll(command, "{{"+strconv.Itoa(j)+"}}", os.Args[i])
+			j++
+		}
+
+	}
 
 	switch runtime.GOOS {
 	case "windows":
