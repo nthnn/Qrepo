@@ -91,7 +91,17 @@ Upon initialization of Qrepo project, it will generate something like this below
     ...
 ```
 
-Whence you can run it with `qrepo run test` and it will execute the `echo No test specified` to your shell.
+Whence you can run it with `qrepo run test` and it will execute the `echo No test specified` to your shell. You can also pass arguments by adding numbered `{{}}`, such as:
+
+```json
+    ...
+	"scripts": {
+		"print": ["echo {{1}}"]
+	}
+    ...
+```
+
+Hence, you can invoke it by `qrepo run print "Hello, world!"`.
 
 To make a script command for different operating systems and architectures, you can do something like:
 
