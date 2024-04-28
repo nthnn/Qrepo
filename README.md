@@ -108,11 +108,11 @@ To make a script command for different operating systems and architectures, you 
 ```json
     ...
 	"scripts": {
-		"darwin/amd64:greet":     ["echo Hello from Darwin (AMD64)."],
-		"darwin/arm64:greet":     ["echo Hello from Darwin (ARM64)."],
+        "darwin/amd64:greet":     ["echo Hello from Darwin (AMD64)."],
+        "darwin/arm64:greet":     ["echo Hello from Darwin (ARM64)."],
         "linux/386:greet":        ["echo Hello from Linux (i386)"],
         "linux/amd64:greet":      ["echo Hello from Linux (AMD64)"],
-		"windows:greet":          ["echo Hello from Windows."],
+        "windows:greet":          ["echo Hello from Windows."],
 	}
     ...
 ```
