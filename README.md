@@ -145,6 +145,7 @@ Below is the list of projects using the Qrepo as package manager and build comma
 3. [Zync OS](https://github.com/nthnn/Zync-OS) - Mock-up bootloader and kernel-only operating system with a very basic boring shell written in pure Assembly.
 4. [ladivic](https://github.com/nthnn/ladivic) - C++ library designed to provide system-level thread- and fail-safe functions with concurrency, atomic, file I/O, IPC, memory management, and system information retrieval functionalities.
 5. [rishka](https://github.com/nthnn/rishka) - RISC-V core virtual runtime written in C/C++ (Arduino platform) intended for ESP32-WROVER with PSRAM.
+6. [n2cmu](https://github.com/nthnn/n2cmu) - Feedforward Neural Network Coprocessing Microcontroller Unit (CPC via UART) for STM32F103C8T6 Bluepill Development Board written purely in TinyGo.
 
 ## Contributing and Contributors
 
