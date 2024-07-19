@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 echo "[\033[92m+\033[0m] \033[92mInstalling\033[0m Qrepo..."
 
