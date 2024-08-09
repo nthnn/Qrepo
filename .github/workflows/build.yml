@@ -14,4 +14,11 @@ jobs:
         run: go version
 
       - name: Building Qrepo distribution binary
-        run: go build -ldflags "-s -w" -o dist/qrepo github.com/nthnn/Qrepo
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Building Qrepo Debian packages
+        run: |
+          chmod +x package.sh
+          ./package.sh
