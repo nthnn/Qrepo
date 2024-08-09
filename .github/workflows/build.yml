@@ -22,3 +22,8 @@ jobs:
         run: |
           chmod +x package.sh
           ./package.sh
+
+      - name: BUild verification
+        run: |
+          ls dist -ral
+          find dist | sort | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
